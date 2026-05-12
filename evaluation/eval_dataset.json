@@ -1,0 +1,121 @@
+{
+    "_meta": {
+      "description": "Eval dataset for the Anthropic docs RAG. Pairs are grouped by type: factual (single-source), synthesis (multi-source), adversarial (out-of-corpus). Adversarial pairs test whether the system admits ignorance instead of hallucinating.",
+      "indexed_pages": [
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/get-started.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart.md"
+      ],
+      "total_pairs": 12,
+      "breakdown": {"factual": 5, "synthesis": 3, "adversarial": 4}
+    },
+    "pairs": [
+      {
+        "id": "q01",
+        "type": "factual",
+        "question": "What is Claude according to the Anthropic documentation?",
+        "expected_urls": ["https://platform.claude.com/docs/en/intro.md"],
+        "expected_answer_contains": ["AI", "Anthropic"],
+        "should_refuse": false
+      },
+      {
+        "id": "q02",
+        "type": "factual",
+        "question": "How do I get started building with the Claude API?",
+        "expected_urls": ["https://platform.claude.com/docs/en/get-started.md"],
+        "expected_answer_contains": ["API"],
+        "should_refuse": false
+      },
+      {
+        "id": "q03",
+        "type": "factual",
+        "question": "What is an Agent Skill in Claude?",
+        "expected_urls": ["https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"],
+        "expected_answer_contains": ["skill"],
+        "should_refuse": false
+      },
+      {
+        "id": "q04",
+        "type": "factual",
+        "question": "How does Claude load a PDF processing skill?",
+        "expected_urls": ["https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"],
+        "expected_answer_contains": ["SKILL.md"],
+        "should_refuse": false
+      },
+      {
+        "id": "q05",
+        "type": "factual",
+        "question": "What is the SKILL.md file used for in Agent Skills?",
+        "expected_urls": ["https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart.md", "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"],
+        "expected_answer_contains": ["instructions"],
+        "should_refuse": false
+      },
+      {
+        "id": "q06",
+        "type": "synthesis",
+        "question": "What are Agent Skills and how do I create one?",
+        "expected_urls": [
+          "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+          "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart.md"
+        ],
+        "expected_answer_contains": ["skill", "SKILL.md"],
+        "should_refuse": false
+      },
+      {
+        "id": "q07",
+        "type": "synthesis",
+        "question": "What features does Claude offer for working with files like PDFs and images?",
+        "expected_urls": [
+          "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+          "https://platform.claude.com/docs/en/intro.md"
+        ],
+        "expected_answer_contains": ["PDF"],
+        "should_refuse": false
+      },
+      {
+        "id": "q08",
+        "type": "synthesis",
+        "question": "How does Claude dynamically load skill content into its context?",
+        "expected_urls": [
+          "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+          "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart.md"
+        ],
+        "expected_answer_contains": ["context"],
+        "should_refuse": false
+      },
+      {
+        "id": "q09",
+        "type": "adversarial",
+        "question": "What is the price per token of GPT-4 Turbo?",
+        "expected_urls": [],
+        "expected_answer_contains": [],
+        "should_refuse": true
+      },
+      {
+        "id": "q10",
+        "type": "adversarial",
+        "question": "What are the rate limits for Tier 4 customers on the Messages API?",
+        "expected_urls": [],
+        "expected_answer_contains": [],
+        "should_refuse": true
+      },
+      {
+        "id": "q11",
+        "type": "adversarial",
+        "question": "Does Claude support the Quantum Reasoning Mode feature?",
+        "expected_urls": [],
+        "expected_answer_contains": [],
+        "should_refuse": true
+      },
+      {
+        "id": "q12",
+        "type": "adversarial",
+        "question": "How do I fine-tune Claude on my own dataset via the API?",
+        "expected_urls": [],
+        "expected_answer_contains": [],
+        "should_refuse": true
+      }
+    ]
+  }

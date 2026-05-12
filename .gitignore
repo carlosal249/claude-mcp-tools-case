@@ -1,0 +1,20 @@
+# env / secrets
+.env
+.env.local
+ 
+# python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+ 
+#eval_results.json
+#eval_report.md
+ 
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+ 

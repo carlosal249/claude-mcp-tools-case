@@ -1,0 +1,321 @@
+{
+  "summary": {
+    "n": 12,
+    "by_type": {
+      "factual": 5,
+      "synthesis": 3,
+      "adversarial": 4
+    },
+    "precision_at_5_mean": 0.9,
+    "judge": {
+      "faithfulness_mean": 3.0,
+      "relevance_mean": 3.625,
+      "citation_correctness_mean": 3.125
+    },
+    "refusal_accuracy": 1.0,
+    "refusal_correct": 4,
+    "refusal_total": 4
+  },
+  "results": [
+    {
+      "id": "q01",
+      "type": "factual",
+      "question": "What is Claude according to the Anthropic documentation?",
+      "expected_urls": [
+        "https://platform.claude.com/docs/en/intro.md"
+      ],
+      "should_refuse": false,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/get-started.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md"
+      ],
+      "answer": "Claude is a highly performant, trustworthy, and intelligent AI platform built by Anthropic. Claude excels at tasks involving language, reasoning, analysis, coding, and more.\n\nThe latest generation of Claude models includes Claude Opus 4.7 (the most capable model for complex reasoning and agentic coding), Claude Sonnet 4.6 (built for coding, agents, and enterprise workflows), and Claude Haiku 4.5 (the fastest model with near-frontier intelligence).",
+      "citation_count": 2,
+      "precision_at_5": 0.6,
+      "refused": false,
+      "refusal_correct": null,
+      "judge": {
+        "faithfulness": 2,
+        "relevance": 3,
+        "citation_correctness": 1,
+        "rationale": "While the answer provides a description of Claude that appears plausible, the retrieved chunks contain only section headers and URLs with no actual content, making it impossible to verify the claims. The specific model names and version numbers (Claude Opus 4.7, Sonnet 4.6, Haiku 4.5) cannot be confirmed from the retrieved content, suggesting potential hallucination."
+      }
+    },
+    {
+      "id": "q02",
+      "type": "factual",
+      "question": "How do I get started building with the Claude API?",
+      "expected_urls": [
+        "https://platform.claude.com/docs/en/intro.md"
+      ],
+      "should_refuse": false,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/get-started.md",
+        "https://platform.claude.com/docs/en/get-started.md",
+        "https://platform.claude.com/docs/en/get-started.md"
+      ],
+      "answer": "To get started building with Claude, follow these steps: first make your first API call by setting up your environment and installing an SDK, then understand the Messages API core patterns including multi-turn conversations and system prompts, choose the right model by comparing Claude models by capability and cost, and finally explore features and tools like extended thinking, web search, and file handling.\n\nFor your first API call, get your API key from the Claude Console and set it as an environment variable, then make a request to the API endpoint with your model and messages. Anthropic provides developer tools including the Developer Console for prototyping prompts, API Reference documentation, and the Claude Cookbook with interactive examples.",
+      "citation_count": 3,
+      "precision_at_5": 0.6,
+      "refused": false,
+      "refusal_correct": null,
+      "judge": {
+        "faithfulness": 4,
+        "relevance": 5,
+        "citation_correctness": 4,
+        "rationale": "The answer is highly relevant and directly addresses how to get started with the Claude API. The claims are well-supported by the retrieved chunks, though the specific details about understanding the Messages API patterns, comparing models, and exploring features go slightly beyond the explicit content shown in the retrieved chunk excerpts, though they are reasonable inferences from a 'recommended path' document."
+      }
+    },
+    {
+      "id": "q03",
+      "type": "factual",
+      "question": "What is an Agent Skill in Claude?",
+      "expected_urls": [
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"
+      ],
+      "should_refuse": false,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"
+      ],
+      "answer": "Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts, templates) that Claude uses automatically when relevant.\n\nSkills are reusable, filesystem-based resources that provide Claude with domain-specific expertise: workflows, context, and best practices that transform general-purpose agents into specialists. Key benefits include the ability to specialize Claude for domain-specific tasks, reduce repetition by creating once and using automatically, and compose capabilities by combining Skills to build complex workflows.",
+      "citation_count": 2,
+      "precision_at_5": 1.0,
+      "refused": false,
+      "refusal_correct": null,
+      "judge": {
+        "faithfulness": 1,
+        "relevance": 2,
+        "citation_correctness": 1,
+        "rationale": "The retrieved chunks only contain section headers and navigation paths from the documentation, with no actual content about what Agent Skills are. The answer appears to be hallucinated or drawn from sources outside the provided chunks, as none of the retrieved content substantiates the detailed claims made about skills being 'modular capabilities,' 'filesystem-based resources,' or their specific benefits."
+      }
+    },
+    {
+      "id": "q04",
+      "type": "factual",
+      "question": "How does Claude load a PDF processing skill?",
+      "expected_urls": [
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"
+      ],
+      "should_refuse": false,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"
+      ],
+      "answer": "Claude loads a PDF processing skill dynamically, starting with skill metadata pre-loaded in the system prompt. When you request something matching the skill's description, Claude invokes the skill by reading SKILL.md via bash to load the detailed instructions into context. Claude then optionally reads additional bundled files like FORMS.md as needed for the specific task, ensuring only relevant skill content occupies the context window.",
+      "citation_count": 1,
+      "precision_at_5": 1.0,
+      "refused": false,
+      "refusal_correct": null,
+      "judge": {
+        "faithfulness": 2,
+        "relevance": 3,
+        "citation_correctness": 2,
+        "rationale": "The answer makes specific claims about how PDF skills are loaded (reading SKILL.md via bash, loading FORMS.md) that cannot be verified from the retrieved chunks, which only contain section headers without actual content. While the general concept of metadata and instructions loading appears relevant, the detailed mechanism described appears to be inferred rather than directly supported by the chunks provided."
+      }
+    },
+    {
+      "id": "q05",
+      "type": "factual",
+      "question": "What is the SKILL.md file used for in Agent Skills?",
+      "expected_urls": [
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"
+      ],
+      "should_refuse": false,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"
+      ],
+      "answer": "The `SKILL.md` file is required for every Skill and contains YAML frontmatter with metadata fields (`name` and `description`) along with the Skill's main content. \n\nThe main body of `SKILL.md` contains procedural knowledge such as workflows, best practices, and guidance that Claude accesses when a request matches the Skill's description. When a Skill is triggered, Claude uses bash to read `SKILL.md` from the filesystem and brings its instructions into the context window. If those instructions reference other files, Claude reads those files too using additional bash commands.",
+      "citation_count": 3,
+      "precision_at_5": 1.0,
+      "refused": false,
+      "refusal_correct": null,
+      "judge": {
+        "faithfulness": 5,
+        "relevance": 5,
+        "citation_correctness": 5,
+        "rationale": "The answer accurately describes the SKILL.md file's purpose and structure, fully supported by the retrieved chunks. All claims about YAML frontmatter, metadata fields, procedural knowledge content, and the loading mechanism are directly cited from the source documentation."
+      }
+    },
+    {
+      "id": "q06",
+      "type": "synthesis",
+      "question": "What are Agent Skills and how do I create one?",
+      "expected_urls": [
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart.md"
+      ],
+      "should_refuse": false,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"
+      ],
+      "answer": "Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts, templates) that Claude uses automatically when relevant.\n\nSkills are reusable, filesystem-based resources that provide Claude with domain-specific expertise: workflows, context, and best practices that transform general-purpose agents into specialists.\n\nTo create a Skill, the documentation provides several pathways:\n\n- You can upload custom Skills as zip files through Settings > Features on Claude.ai (available on Pro, Max, Team, and Enterprise plans with code execution enabled)\n- The documentation also references a [quickstart guide](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart) and [authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) for detailed instructions on creating Skills\n- For complete examples of custom Skills, see the Skills cookbook",
+      "citation_count": 4,
+      "precision_at_5": 1.0,
+      "refused": false,
+      "refusal_correct": null,
+      "judge": {
+        "faithfulness": 2,
+        "relevance": 2,
+        "citation_correctness": 2,
+        "rationale": "The retrieved chunks only contain section headers and navigation elements from the overview page, with no actual content about what Agent Skills are or how to create them. The answer appears to be largely hallucinated, as the chunks do not support the detailed explanations provided about Skills being 'modular capabilities,' 'filesystem-based resources,' or the specific instructions about uploading via Settings on Claude.ai."
+      }
+    },
+    {
+      "id": "q07",
+      "type": "synthesis",
+      "question": "What features does Claude offer for working with files like PDFs and images?",
+      "expected_urls": [
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/intro.md"
+      ],
+      "should_refuse": false,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md"
+      ],
+      "answer": "Claude offers a Files API that allows you to upload and manage files to use with Claude without re-uploading content with each request, supporting PDFs, images, and text files. Additionally, Claude can process and analyze text and visual content from PDF documents through its PDF support feature.",
+      "citation_count": 2,
+      "precision_at_5": 1.0,
+      "refused": false,
+      "refusal_correct": null,
+      "judge": {
+        "faithfulness": 4,
+        "relevance": 4,
+        "citation_correctness": 5,
+        "rationale": "The answer accurately describes Claude's Files API and PDF support features based on the cited chunks. The answer is mostly faithful and well-cited, though it could be more complete by explaining additional file types or features that might be mentioned in the full documentation sections referenced."
+      }
+    },
+    {
+      "id": "q08",
+      "type": "synthesis",
+      "question": "How does Claude dynamically load skill content into its context?",
+      "expected_urls": [
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart.md"
+      ],
+      "should_refuse": false,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"
+      ],
+      "answer": "Claude uses a filesystem-based architecture with progressive disclosure, loading skill information in stages as needed rather than consuming context upfront.\n\nWhen a skill is triggered, Claude uses bash commands to read SKILL.md from the filesystem, bringing its instructions into the context window. If those instructions reference other files, Claude reads those files too using additional bash commands. When instructions mention executable scripts, Claude runs them via bash and receives only the output\u2014the script code itself never enters context.\n\nThis approach means Claude reads only the files needed for each specific task. A skill can include dozens of reference files, but if a task only needs one file, Claude loads just that one. The rest remain on the filesystem consuming zero tokens.",
+      "citation_count": 3,
+      "precision_at_5": 1.0,
+      "refused": false,
+      "refusal_correct": null,
+      "judge": {
+        "faithfulness": 4,
+        "relevance": 5,
+        "citation_correctness": 5,
+        "rationale": "The answer is well-supported by the retrieved chunks and directly addresses the question about how Claude dynamically loads skill content. The citations accurately reflect the content about filesystem-based architecture and on-demand file access, though the chunks provided are headers/titles with limited substantive content visible."
+      }
+    },
+    {
+      "id": "q09",
+      "type": "adversarial",
+      "question": "What is the price per token of GPT-4 Turbo?",
+      "expected_urls": [],
+      "should_refuse": true,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md"
+      ],
+      "answer": "I don't see that in the provided documentation. The search results contain information about Anthropic's Claude models, not OpenAI's GPT-4 Turbo pricing.\n\nIf you have questions about Claude's pricing or capabilities, I'd be happy to help with those!",
+      "citation_count": 0,
+      "precision_at_5": NaN,
+      "refused": true,
+      "refusal_correct": true,
+      "judge": null
+    },
+    {
+      "id": "q10",
+      "type": "adversarial",
+      "question": "What are the rate limits for Tier 4 customers on the Messages API?",
+      "expected_urls": [],
+      "should_refuse": true,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/get-started.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md"
+      ],
+      "answer": "I don't see that information in the provided documentation. The search results don't contain details about rate limits for Tier 4 customers on the Messages API.\n\nTo find this information, you may want to check the Anthropic documentation's API reference section, your account settings on the Claude platform, or contact Anthropic support directly.",
+      "citation_count": 0,
+      "precision_at_5": NaN,
+      "refused": true,
+      "refusal_correct": true,
+      "judge": null
+    },
+    {
+      "id": "q11",
+      "type": "adversarial",
+      "question": "Does Claude support the Quantum Reasoning Mode feature?",
+      "expected_urls": [],
+      "should_refuse": true,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md"
+      ],
+      "answer": "I don't see any information about a \"Quantum Reasoning Mode\" feature in the provided documentation. The documentation covers features like adaptive thinking, extended thinking, and effort parameters for controlling Claude's reasoning, but there is no mention of a Quantum Reasoning Mode.",
+      "citation_count": 0,
+      "precision_at_5": NaN,
+      "refused": true,
+      "refusal_correct": true,
+      "judge": null
+    },
+    {
+      "id": "q12",
+      "type": "adversarial",
+      "question": "How do I fine-tune Claude on my own dataset via the API?",
+      "expected_urls": [],
+      "should_refuse": true,
+      "retrieved_urls": [
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/intro.md",
+        "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md",
+        "https://platform.claude.com/docs/en/build-with-claude/overview.md",
+        "https://platform.claude.com/docs/en/intro.md"
+      ],
+      "answer": "I don't see information about fine-tuning Claude in the provided documentation. The search results cover Claude's core features like the Messages API, available models, and tools, but they don't include details about fine-tuning capabilities.\n\nFor information on fine-tuning Claude, you may want to check the complete API documentation or contact Anthropic directly through their support channels.",
+      "citation_count": 0,
+      "precision_at_5": NaN,
+      "refused": true,
+      "refusal_correct": true,
+      "judge": null
+    }
+  ]
+}
